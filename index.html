@@ -34,7 +34,9 @@
     <!--Fin Sidebar-->
 
     <!--Compra-->
+
     <div class="container card shadow col-10 mt-2 p-5">
+        <form id="formCompra">
         <div class="row mt-5">
             <h3>Comprar pasaje</h3>
             <p class="text-muted">Comprando ida y vuelta, obtenés 25% de descuento en el pasaje de
@@ -46,9 +48,7 @@
                     <div class="col-md">
                         <div class="form-floating">
                             <select class="form-select" id="selectPartida">
-                                
                                 <!--Agregar options con JS-->
-                            
                             </select>
                             <label for="selectPartida">Estacion de Partida</label>
                         </div>
@@ -56,9 +56,7 @@
                     <div class="col-md">
                         <div class="form-floating">
                             <select class="form-select" id="selectDestino">
-                                
                                 <!--Agregar options con JS-->
-
                             </select>
                             <label for="selectDestino">Estacion de Destino</label>
                         </div>
@@ -66,6 +64,15 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" id="btnCalcular">Calcular precio</button>
+                <button type="submit" class="btn btn-success" id="btnComprar">Comprar pasaje</button> 
+                <button type="reset" class="btn btn-danger" id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+    </form>
+    </div>
         <!--Fin compra-->
 
         <!--Carga-->
