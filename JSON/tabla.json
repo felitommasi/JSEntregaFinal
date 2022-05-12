@@ -1,0 +1,92 @@
+[
+    {   
+        "id": "1",
+        "seccion": "1",
+        "ramal": "Alejandro Korn",
+        "estacion": "Constitución"
+    },
+    {   
+        "id": "2",
+        "seccion": "1",
+        "ramal": "Alejandro Korn",
+        "estacion": "Hipólito Yrigoyen"
+    },
+    {   
+        "id": "3",
+        "seccion": "1",
+        "ramal": "Alejandro Korn",
+        "estacion": "Santillán y Kosteki"
+    },
+    {   
+        "id": "4",
+        "seccion": "1",
+        "ramal": "Alejandro Korn",
+        "estacion": "Gerli"
+    },
+    {   
+        "id": "5",
+        "seccion": "1",
+        "ramal": "Alejandro Korn",
+        "estacion": "Lanús"
+    },
+    {   
+        "id": "6",
+        "seccion": "1",
+        "ramal": "Alejandro Korn",
+        "estacion": "Remedios de Escalada"
+    },
+    {   
+        "id": "7",
+        "seccion": "2",
+        "ramal": "Alejandro Korn",
+        "estacion": "Banfield"
+    },
+    {   
+        "id": "8",
+        "seccion": "2",
+        "ramal": "Alejandro Korn",
+        "estacion": "Lomas de Zamora"
+    },
+    {   
+        "id": "9",
+        "seccion": "2",
+        "ramal": "Alejandro Korn",
+        "estacion": "Temperley"
+    },
+    {   
+        "id": "10",
+        "seccion": "2",
+        "ramal": "Alejandro Korn",
+        "estacion": "Adrogué"
+    },
+    {   
+        "id": "11",
+        "seccion": "2",
+        "ramal": "Alejandro Korn",
+        "estacion": "Burzaco"
+    },
+    {   
+        "id": "12",
+        "seccion": "2",
+        "ramal": "Alejandro Korn",
+        "estacion": "Longchamps"
+    },
+    {   
+        "id": "13",
+        "seccion": "3",
+        "ramal": "Alejandro Korn",
+        "estacion": "Glew"
+    },
+    {   
+        "id": "14",
+        "seccion": "3",
+        "ramal": "Alejandro Korn",
+        "estacion": "Guernica"
+    },
+    {   
+        "id": "15",
+        "seccion": "3",
+        "ramal": "Alejandro Korn",
+        "estacion": "Alejandro Korn"
+    }
+]

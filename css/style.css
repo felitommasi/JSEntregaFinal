@@ -11125,6 +11125,9 @@ textarea.form-control-lg {
 }
 
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 4.5rem;
   height: 100vh;
 }
@@ -11134,7 +11137,9 @@ textarea.form-control-lg {
 .sidebar ul li {
   padding: 1rem 0;
 }
-.sidebar ul li:hover {
+.sidebar ul li:hover,
+.sidebar ul li a:active,
+.sidebar ul li a:hover {
   background-color: #dedede;
 }
 .sidebar ul li i {
