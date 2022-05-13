@@ -22,12 +22,13 @@ cargarData();
 //seleccionar nodos 
 const selectPartida = document.querySelector('#selectPartida');
 const selectDestino = document.querySelector('#selectDestino');
-const form = document.querySelector('#formCompra');
+const formulario = document.querySelector('#formCompra');
 const btnCalcular = document.querySelector('#btnCalcular');
 const btnComprar = document.querySelector('#btnComprar');
 //deshabilitado hasta obtener valor de pasaje != a 0
 btnComprar.disabled = true;
 const btnCancelar = document.querySelector('#btnCancelar');
+
 
 
 //pintar data en options
@@ -60,21 +61,35 @@ const pintarOptions = (arrayData) => {
 }
 
 //recuperar valor ingresado en select partida
-//TODO:
+//TODO: determinar como calcular el valor
 selectPartida.addEventListener('change', (e) =>{
   let estacionPartida = e.target.value;
   console.log(estacionPartida);
-})
+});
 
 //recuperar valor ingresado en select destino
-//TODO:
+//TODO: determinar como calcular el valor 
 selectDestino.addEventListener('change', (e) =>{
   let estacionDestino = e.target.value;
   console.log(estacionDestino);
-})
+});
 
-//control de form
 
+//TODO: calcular precio pasajes
+//?asignar secciones de las estaciones
+function asignarSeccionEstacion (){
+}
+
+
+
+//funcion validacion campos
+//TODO: function validaCampos(){}
+
+
+//TODO: control de form
+formulario.addEventListener('submit', (e) =>{
+  e.preventDefault;
+}); 
 
 
 
