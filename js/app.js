@@ -10,7 +10,7 @@ const cargarData = async () => {
 	try {
 		const respuesta = await fetch("JSON/tabla.json");
 		const arrayData = await respuesta.json();
-    //?console.log(arrayData);
+    //console.log(arrayData);
     pintarOptions(arrayData);
 
 	} catch (error) {
@@ -25,6 +25,8 @@ const selectDestino = document.querySelector('#selectDestino');
 const form = document.querySelector('#formCompra');
 const btnCalcular = document.querySelector('#btnCalcular');
 const btnComprar = document.querySelector('#btnComprar');
+//deshabilitado hasta obtener valor de pasaje != a 0
+btnComprar.disabled = true;
 const btnCancelar = document.querySelector('#btnCancelar');
 
 
@@ -57,29 +59,25 @@ const pintarOptions = (arrayData) => {
 	} 
 }
 
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
-
-  //esperar a que cargue el DOM
-  const optionPartida = document.getElementsByTagName('option');
-  
-  //obtener datos ingresados en select's
-  for (let i = 0 ; i < optionPartida.length; i++) {
-    console.log(optionPartida.length)
-  }
-
-
+//recuperar valor ingresado en select partida
+//TODO:
+selectPartida.addEventListener('change', (e) =>{
+  let estacionPartida = e.target.value;
+  console.log(estacionPartida);
 })
 
-
-
-/*
-let obtenerTextoPartida = optionPartida.addEventListener('click', () =>{
-    console.log(selectPartida.value);
-    console.log(selectPartida.textContent);
+//recuperar valor ingresado en select destino
+//TODO:
+selectDestino.addEventListener('change', (e) =>{
+  let estacionDestino = e.target.value;
+  console.log(estacionDestino);
 })
 
- */
+//control de form
+
+
+
+
+
 
 

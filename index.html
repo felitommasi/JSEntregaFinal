@@ -64,6 +64,25 @@
                 </div>
             </div>
         </div>
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="tipoPasaje">
+                        <option value="1">Sólo ida</option>
+                        <option value="2">Ida y vuelta</option>
+                    </select>
+                    <label for="tipoPasaje">Tipo de pasaje</label>
+                </div>
+            </div>
+            
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="precioTotalInput" placeholder="$00,00" value="$00,00">
+                    <label for="precioTotalInput">Valor total</label>
+                  </div>
+            </div>
+
+        </div>
         <div class="row">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" id="btnCalcular">Calcular precio</button>
