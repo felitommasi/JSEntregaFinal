@@ -268,7 +268,7 @@ window.onload = function () {
 		arrayViajesRealizados.push(viaje);
 
 		//guardar el array en local storage y convertirlo en JSON
-		localStorage.setItem("historial", JSON.stringify(arrayViajesRealizados));
+		sessionStorage.setItem("historial", JSON.stringify(arrayViajesRealizados));
 
     //mostrar viajes cuando se agregan
     mostrarViajes(historialViaje);

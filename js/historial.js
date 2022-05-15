@@ -14,7 +14,7 @@ const arrayViajesRealizados = [];
 
 
 //recuperar info de local storage
-let historialViaje = JSON.parse(localStorage.getItem("historial"));
+let historialViaje = JSON.parse(sessionStorage.getItem("historial"));
 //console.log(historialViaje);
 
 //mostrar historial de viajes por pantalla
@@ -51,9 +51,9 @@ function recuperar() {
 	if (historialViaje) {
         console.log(historialViaje)
 		historialViaje.forEach((el) => {
-			mostrarViajes(el);
+			//mostrarViajes(el);
 			arrayViajesRealizados.push(el);
 		});
 	}
 }
-recuperar();
+//recuperar();
