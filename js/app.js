@@ -270,14 +270,14 @@ window.onload = function () {
 		//guardar el array en local storage y convertirlo en JSON
 		sessionStorage.setItem("historial", JSON.stringify(arrayViajesRealizados));
 
-    //mostrar viajes cuando se agregan
-    mostrarViajes(historialViaje);
-
     //reiniciar valores del formulario
 		formulario.reset();
 		btnComprar.disabled = true;
 
-		//TODO: agregar sweet alert
+    //TODO: agregar sweet alert
+    
+    //mostrar viajes cuando se agregan
+    mostrarViajes(historialViaje);
 	}
 
 

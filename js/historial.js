@@ -51,9 +51,9 @@ function recuperar() {
 	if (historialViaje) {
         console.log(historialViaje)
 		historialViaje.forEach((el) => {
-			//mostrarViajes(el);
+			mostrarViajes(el);
 			arrayViajesRealizados.push(el);
 		});
 	}
 }
-//recuperar();
+recuperar();
