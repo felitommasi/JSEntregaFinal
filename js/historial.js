@@ -19,7 +19,7 @@ let historialViaje = JSON.parse(localStorage.getItem("historial"));
 
 //mostrar historial de viajes por pantalla
 function mostrarViajes(historialViaje) {
-	if (historialViaje == null || undefined){
+	if ((historialViaje == null) || (historialViaje == undefined)){
         //crear mensaje de informacion
         console.log(historialViaje)
         let mensaje = document.createElement("p");
@@ -27,7 +27,7 @@ function mostrarViajes(historialViaje) {
         cardViajes.appendChild(mensaje);
 		console.log("no hay viajes registrados");
 	}
-    else if ((historialViaje != null) || (historialViaje.valor != undefined)) {
+    else if ((historialViaje != null) || (historialViaje != undefined)) {
 		//crear card por cada viaje
         console.log(historialViaje)
 		let div = document.createElement("div");
@@ -44,6 +44,7 @@ function mostrarViajes(historialViaje) {
         console.log('error');
     }
 }
+//mostrarViajes(historialViaje);
 
 //recuperar valores de local storage
 function recuperar() {
