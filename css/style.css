@@ -11138,7 +11138,6 @@ textarea.form-control-lg {
   padding: 1rem 0;
 }
 .sidebar ul li:hover,
-.sidebar ul li a:active,
 .sidebar ul li a:hover {
   background-color: #dedede;
 }
@@ -11151,10 +11150,22 @@ textarea.form-control-lg {
   display: none;
 }
 
-/* esconder menus al entrar por primera vez */
 #cardCarga,
 #cardViajes {
   display: none;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin: 0 auto;
+}
+.buttonRow .btn {
+  padding: 0.7rem 0;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

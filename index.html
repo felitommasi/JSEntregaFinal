@@ -82,7 +82,7 @@
 
 		<!--Compra-->
 
-		<div class="container card shadow col-10 mt-2 p-5" id="cardCompra">
+		<div class="container card shadow col-10 mt-2 p-5 mt-5" id="cardCompra">
 			<form id="formCompra">
 				<div class="row mt-5">
 					<h3>Comprar pasaje</h3>
@@ -91,10 +91,8 @@
 						vuelta.
 					</p>
 				</div>
-				<div class="row g-2">
-					<div class="col-md">
-						<div class="input-group mb-3 input">
-							<div class="col-md">
+				<div class="row g-3 mb-4">
+							<div class="col-md-6">
 								<div class="form-floating">
 									<select class="form-select" id="selectPartida">
 										<option selected>Selecciona una estación</option>
@@ -103,7 +101,7 @@
 									<label for="selectPartida">Estacion de Partida</label>
 								</div>
 							</div>
-							<div class="col-md">
+							<div class="col-md-6">
 								<div class="form-floating">
 									<select class="form-select" id="selectDestino">
 										<option selected>Selecciona una estación</option>
@@ -112,11 +110,9 @@
 									<label for="selectDestino">Estacion de Destino</label>
 								</div>
 							</div>
-						</div>
-					</div>
 				</div>
-				<div class="row g-2">
-					<div class="col-md">
+				<div class="row g-3 mb-4">
+					<div class="col-md-6">
 						<div class="form-floating">
 							<select class="form-select" id="tipoPasaje">
 								<option value="1">Sólo ida</option>
@@ -126,7 +122,7 @@
 						</div>
 					</div>
 
-					<div class="col-md">
+					<div class="col-md-6">
 						<div class="form-floating">
 							<input
 								type="text"
@@ -134,30 +130,29 @@
 								id="precioTotalInput"
 								placeholder="$00,00"
 								value="$00,00"
+                                disabled="true"
 							/>
 							<label for="precioTotalInput">Valor total</label>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary" id="btnCalcular">
+				<div class="row mt-5 mb-5 buttonRow">
+						<button type="button" class="btn btn-primary col-md" id="btnCalcular">
 							Calcular precio
 						</button>
-						<button type="submit" class="btn btn-success" id="btnComprar">
+						<button type="submit" class="btn btn-success col-md" id="btnComprar">
 							Comprar pasaje
 						</button>
-						<button type="reset" class="btn btn-danger" id="btnCancelar">
+						<button type="reset" class="btn btn-danger col-md" id="btnCancelar">
 							Cancelar
 						</button>
-					</div>
 				</div>
 			</form>
 		</div>
 		<!--Fin compra-->
 
 		<!--Carga-->
-		<div class="container card shadow col-10 mt-2 p-5" id="cardCarga">
+		<div class="container card shadow col-10 mt-2 p-5 mt-5" id="cardCarga">
 			<form id="">
 				<div class="row mt-5">
 					<h3>Cargar saldo</h3>
@@ -173,7 +168,7 @@
 								type="text"
 								class="form-control"
 								id="saldoActualInput"
-								value="100"
+								value="$100"
 							/>
 							<label for="precioTotalInput">Tu saldo actual es:</label>
 						</div>
@@ -185,23 +180,23 @@
 								class="form-control"
 								id="nuevoSaldoInput"
 								value=""
+                                disabled="true"
 							/>
 							<label for="precioTotalInput">Tu saldo será:</label>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="btn-group">
-						<button type="submit" class="btn btn-success" id="">Cargar</button>
-						<button type="reset" class="btn btn-danger" id="">Cancelar</button>
-					</div>
+				<div class="row mt-5 mb-5 buttonRow">
+						<button type="submit" class="btn btn-success col-md" id="">Cargar</button>
+						<button type="reset" class="btn btn-danger col-md" id="">Cancelar</button>
+			
 				</div>
 			</form>
 		</div>
 		<!--Fin Carga-->
 
 		<!--Historial-->
-		<div class="container card shadow col-10 mt-2 p-5" id="cardViajes">
+		<div class="container card shadow col-10 mt-2 p-5 mt-5" id="cardViajes">
 			<div class="row mt-2">
 				<h3>Tu historial de viajes</h3>
 				<p class="text-muted mb-4">Estos son los viajes que realizaste:</p>

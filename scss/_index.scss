@@ -12,7 +12,6 @@
 			padding: 1rem 0;
 
 			&:hover,
-			a:active,
 			a:hover {
 				background-color: #dedede;
 			}
@@ -22,7 +21,7 @@
 				font-size: 2.2rem;
 			}
 				
-
+			//estilo iconos sidebar
 			#iconoCompra, #iconoCompraFill,
 			#iconoCarga, #iconoCargaFill,
 			#iconoViajes, #iconoViajesFill{
@@ -33,8 +32,23 @@
 	}
 }
 
-/* esconder menus al entrar por primera vez */
+//esconder menus al entrar por primera vez 
 #cardCarga,
 #cardViajes {
 	display: none;
+}
+
+//estilo botones form
+.buttonRow {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 0.7rem;
+	margin: 0 auto;
+
+	.btn{
+		padding: 0.7rem 0;
+		border-radius: 10px;
+	}
 }

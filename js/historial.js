@@ -31,7 +31,7 @@ function mostrarViajes(historialViaje) {
 		//crear card por cada viaje
         console.log(historialViaje)
 		let div = document.createElement("div");
-		div.className = "container card shadow-sm row";
+		div.className = "container card shadow-sm row pt-2 pb-2 mt-3";
 		div.innerHTML = `
             <p><strong>Pasaje: </strong>${historialViaje.pasaje}</p>
             <p><strong>Partida: </strong>${historialViaje.partida}</p>	
