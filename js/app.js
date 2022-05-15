@@ -130,49 +130,49 @@ window.onload = function () {
 			seccionDestino == 1 &&
 			selectPasaje.value == 1
 		) {
-			inputPrecio.value = `\$${50}`;
+			inputPrecio.value = `${50}`;
 		} else if (
 			(seccionPartida == 1 && seccionDestino == 2) ||
 			(seccionDestino == 1 && seccionPartida == 2 && selectPasaje.value == 1)
 		) {
-			inputPrecio.value = `\$${70}`;
+			inputPrecio.value = `${70}`;
 		} else if (
 			(seccionPartida == 1 && seccionDestino == 3) ||
 			(seccionDestino == 1 && seccionPartida == 3 && selectPasaje.value == 1)
 		) {
-			inputPrecio.value = `\$${90}`;
+			inputPrecio.value = `${90}`;
 		} else if (
 			(seccionPartida == 2 && seccionDestino == 1) ||
 			(seccionDestino == 2 && seccionPartida == 1 && selectPasaje.value == 1)
 		) {
-			inputPrecio.value = `\$${70}`;
+			inputPrecio.value = `${70}`;
 		} else if (
 			seccionPartida == 2 &&
 			seccionDestino == 2 &&
 			selectPasaje.value == 1
 		) {
-			inputPrecio.value = `\$${50}`;
+			inputPrecio.value = `${50}`;
 		} else if (
 			(seccionPartida == 2 && seccionDestino == 3) ||
 			(seccionDestino == 2 && seccionPartida == 3 && selectPasaje.value == 1)
 		) {
-			inputPrecio.value = `\$${70}`;
+			inputPrecio.value = `${70}`;
 		} else if (
 			(seccionPartida == 3 && seccionDestino == 1) ||
 			(seccionDestino == 3 && seccionPartida == 1 && selectPasaje.value == 1)
 		) {
-			inputPrecio.value = `\$${90}`;
+			inputPrecio.value = `${90}`;
 		} else if (
 			(seccionPartida == 3 && seccionDestino == 2) ||
 			(seccionDestino == 3 && seccionPartida == 2 && selectPasaje.value == 1)
 		) {
-			inputPrecio.value = `\$${70}`;
+			inputPrecio.value = `${70}`;
 		} else if (
 			seccionPartida == 3 &&
 			seccionDestino == 3 &&
 			selectPasaje.value == 1
 		) {
-			inputPrecio.value = `\$${50}`;
+			inputPrecio.value = `${50}`;
 		} else {
 			console.log("error");
 		}
@@ -191,59 +191,56 @@ window.onload = function () {
 			seccionDestino == 1 &&
 			selectPasaje.value == 2
 		) {
-			inputPrecio.value = `\$${50 + 50 * 0.75}`;
+			inputPrecio.value = `${50 + 50 * 0.75}`;
 		} else if (
 			(seccionPartida == 1 && seccionDestino == 2) ||
 			(seccionDestino == 1 && seccionPartida == 2 && selectPasaje.value == 2)
 		) {
-			inputPrecio.value = `\$${70 + 70 * 0.75}`;
+			inputPrecio.value = `${70 + 70 * 0.75}`;
 		} else if (
 			(seccionPartida == 1 && seccionDestino == 3) ||
 			(seccionDestino == 1 && seccionPartida == 3 && selectPasaje.value == 2)
 		) {
-			inputPrecio.value = `\$${90 + 90 + 0.75}`;
+			inputPrecio.value = `${90 + 90 + 0.75}`;
 		} else if (
 			(seccionPartida == 2 && seccionDestino == 1) ||
 			(seccionDestino == 2 && seccionPartida == 1 && selectPasaje.value == 2)
 		) {
-			inputPrecio.value = `\$${70 + 70 * 0.75}`;
+			inputPrecio.value = `${70 + 70 * 0.75}`;
 		} else if (
 			seccionPartida == 2 &&
 			seccionDestino == 2 &&
 			selectPasaje.value == 1
 		) {
-			inputPrecio.value = `\$${50 + 50 * 0.75}`;
+			inputPrecio.value = `${50 + 50 * 0.75}`;
 		} else if (
 			(seccionPartida == 2 && seccionDestino == 3) ||
 			(seccionDestino == 2 && seccionPartida == 3 && selectPasaje.value == 1)
 		) {
-			inputPrecio.value = `\$${70 + 70 * 0.75}`;
+			inputPrecio.value = `${70 + 70 * 0.75}`;
 		} else if (
 			(seccionPartida == 3 && seccionDestino == 1) ||
 			(seccionDestino == 3 && seccionPartida == 1 && selectPasaje.value == 2)
 		) {
-			inputPrecio.value = `\$${90 + 90 * 0.75}`;
+			inputPrecio.value = `${90 + 90 * 0.75}`;
 		} else if (
 			(seccionPartida == 3 && seccionDestino == 2) ||
 			(seccionDestino == 3 && seccionPartida == 2 && selectPasaje.value == 2)
 		) {
-			inputPrecio.value = `\$${70 + 70 * 0.75}`;
+			inputPrecio.value = `${70 + 70 * 0.75}`;
 		} else if (
 			seccionPartida == 3 &&
 			seccionDestino == 3 &&
 			selectPasaje.value == 2
 		) {
-			inputPrecio.value = `\$${50 + 50 * 0.75}`;
+			inputPrecio.value = `${50 + 50 * 0.75}`;
 		} else {
 			console.log("error");
 		}
 	}
 
-	//TODO: comprar, crear array de historial, guardar en local storage y mostrar
-
 	//funcion validacion campos
 	//TODO: function validaCampos(){}
-
 
 	//TODO: control de form
 	formulario.addEventListener("submit", nuevoViaje);
@@ -270,18 +267,26 @@ window.onload = function () {
 		//guardar el array en local storage y convertirlo en JSON
 		sessionStorage.setItem("historial", JSON.stringify(arrayViajesRealizados));
 
-    //reiniciar valores del formulario
+		//precio pasaje
+		precioPasaje = parseInt(valor);
+
+		//reiniciar valores del formulario
 		formulario.reset();
 		btnComprar.disabled = true;
 
-    //TODO: agregar sweet alert
-    
-    //mostrar viajes cuando se agregan
-    mostrarViajes(historialViaje);
+		//mostrar viajes cuando se agregan
+		mostrarViajes(historialViaje);
+
+		//alert compra correcta
+		Swal.fire({
+			position: "center",
+			icon: "success",
+			title: "Listo, ¡buen viaje!",
+			showConfirmButton: false,
+			timer: 2000,
+		});
 	}
-
-
-
-	//TODO:
-	//!PESTAÑA CARGA SALDO
 };
+
+//TODO: agregar inicio de sesion con animacion tarjeta
+//console.log(parseInt(precioTotalInput.value))
