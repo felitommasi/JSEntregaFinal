@@ -270,9 +270,9 @@ window.onload = function () {
 		//guardar el array en local storage y convertirlo en JSON
 		localStorage.setItem("historial", JSON.stringify(arrayViajesRealizados));
 
-    //agregar a viajes en historial
+    //mostrar viajes cuando se agregan
     mostrarViajes(historialViaje);
-		
+
     //reiniciar valores del formulario
 		formulario.reset();
 		btnComprar.disabled = true;

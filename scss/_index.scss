@@ -1,7 +1,7 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 4.5rem;
 	height: 100vh;
 
@@ -12,15 +12,29 @@
 			padding: 1rem 0;
 
 			&:hover,
-            a:active,
-            a:hover {
+			a:active,
+			a:hover {
 				background-color: #dedede;
 			}
 
-
-			i {
-				font-size: 2rem;
+			//btns sidebar al entrar por primera vez
+			i{
+				font-size: 2.2rem;
 			}
+				
+
+			#iconoCompra, #iconoCompraFill,
+			#iconoCarga, #iconoCargaFill,
+			#iconoViajes, #iconoViajesFill{
+				display: none;
+			}
+			
 		}
 	}
+}
+
+/* esconder menus al entrar por primera vez */
+#cardCarga,
+#cardViajes {
+	display: none;
 }

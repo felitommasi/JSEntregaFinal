@@ -11143,7 +11143,18 @@ textarea.form-control-lg {
   background-color: #dedede;
 }
 .sidebar ul li i {
-  font-size: 2rem;
+  font-size: 2.2rem;
+}
+.sidebar ul li #iconoCompra, .sidebar ul li #iconoCompraFill,
+.sidebar ul li #iconoCarga, .sidebar ul li #iconoCargaFill,
+.sidebar ul li #iconoViajes, .sidebar ul li #iconoViajesFill {
+  display: none;
+}
+
+/* esconder menus al entrar por primera vez */
+#cardCarga,
+#cardViajes {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,34 +10,49 @@ class Viaje {
 
 //array vacio para guardar viajes realizados
 const arrayViajesRealizados = [];
-console.log(arrayViajesRealizados);
+//console.log(arrayViajesRealizados);
 
-//!PESTAÑA HISTORIAL VIAJES
-//seleccionar nodos
-const cardViajes = document.querySelector("#viajesRealizados");
 
 //recuperar info de local storage
 let historialViaje = JSON.parse(localStorage.getItem("historial"));
-console.log(historialViaje);
+//console.log(historialViaje);
 
 //mostrar historial de viajes por pantalla
 function mostrarViajes(historialViaje) {
-	if (historialViaje != null) {
-		for (let i = 0; i < historialViaje.length; i++) {
-			//crear card por cada viaje
-			let div = document.createElement("div");
-			div.className = "container card shadow-sm row";
-			div.innerHTML = `
-            <p><strong>Pasaje: </strong>${historialViaje[i].pasaje}</p>
-            <p><strong>Partida: </strong>${historialViaje[i].partida}</p>	
-            <p><strong>Destino: </strong>${historialViaje[i].destino}</p>	
-            <p><strong>Valor: </strong>${historialViaje[i].valor}</p>		
+	if (historialViaje == null || undefined){
+        //crear mensaje de informacion
+        console.log(historialViaje)
+        let mensaje = document.createElement("p");
+        mensaje.innerText = 'No hay viajes registrados';
+        cardViajes.appendChild(mensaje);
+		console.log("no hay viajes registrados");
+	}
+    else if ((historialViaje != null) || (historialViaje.valor != undefined)) {
+		//crear card por cada viaje
+        console.log(historialViaje)
+		let div = document.createElement("div");
+		div.className = "container card shadow-sm row";
+		div.innerHTML = `
+            <p><strong>Pasaje: </strong>${historialViaje.pasaje}</p>
+            <p><strong>Partida: </strong>${historialViaje.partida}</p>	
+            <p><strong>Destino: </strong>${historialViaje.destino}</p>	
+            <p><strong>Valor: </strong>${historialViaje.valor}</p>		
           `;
-			cardViajes.appendChild(div);
-			console.log("se añadio un viaje al historial");
-		}
-	} else {
-		console.log(historialViaje);
-		console.log("no hay viajes guardados");
+		cardViajes.appendChild(div);
+		console.log("se añadio un viaje al historial");
+	}  else{
+        console.log('error');
+    }
+}
+
+//recuperar valores de local storage
+function recuperar() {
+	if (historialViaje) {
+        console.log(historialViaje)
+		historialViaje.forEach((el) => {
+			mostrarViajes(el);
+			arrayViajesRealizados.push(el);
+		});
 	}
 }
+recuperar();
