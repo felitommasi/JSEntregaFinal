@@ -86,7 +86,7 @@
 		<!--Compra-->
 
 		<div class="container card shadow col-10 mt-2 p-5 mt-5 mb-5" id="cardCompra">
-			<form id="formCompra">
+			<form id="formCompra" class="needs-validation" novalidate>
 				<div class="row mt-5">
 					<h3>Comprar pasaje</h3>
 					<p class="text-muted">
@@ -97,7 +97,7 @@
 				<div class="row g-3 mb-4">
 							<div class="col-md-6">
 								<div class="form-floating">
-									<select class="form-select" id="selectPartida">
+									<select class="form-select" id="selectPartida" required>
 										<option selected>Selecciona una estación</option>
                                         <!--Agregar options con JS-->
 									</select>
@@ -106,7 +106,7 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-floating">
-									<select class="form-select" id="selectDestino">
+									<select class="form-select" id="selectDestino" required>
 										<option selected>Selecciona una estación</option>
                                         <!--Agregar options con JS-->
 									</select>
@@ -117,7 +117,7 @@
 				<div class="row g-3 mb-4">
 					<div class="col-md-6">
 						<div class="form-floating">
-							<select class="form-select" id="tipoPasaje">
+							<select class="form-select" id="tipoPasaje" required>
 								<option value="1">Sólo ida</option>
 								<option value="2">Ida y vuelta</option>
 							</select>

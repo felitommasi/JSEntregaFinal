@@ -1,4 +1,3 @@
-//!PESTAÑA COMPRA PASAJE
 //popper sidebar
 //init popper segun documentacion
 var tooltipTriggerList = [].slice.call(
@@ -34,6 +33,25 @@ window.onload = function () {
 	//deshabilitado hasta obtener valor de pasaje != a 0
 	btnComprar.disabled = true;
 	const btnCancelar = document.querySelector("#btnCancelar");
+
+	//!validacion form
+	//msje por consola en caso de correcto
+	const validOk = () => {
+    //TODO:::::::::::::::::::::::::!!!!!!!!!
+	};
+
+	//msje por pantalla en caso de error
+	const validError = () => {
+		//TODO:::::::::::::::::::::::::!!!!!!!!!
+	};
+
+	function validaCampos() {
+		//validar estacion partida
+		selectPartida.value === undefined ? validError() : validOk();
+
+		//validar estacion destino
+		selectDestino.value === undefined ? validError() : validOk();
+	}
 
 	//pintar data en options
 	const pintarOptions = (arrayData) => {
@@ -82,8 +100,12 @@ window.onload = function () {
 
 	//obtener secciones de las estaciones
 	const asignarSeccionEstacion = (arrayData) =>
-		btnCalcular.addEventListener("click", () => {
+		
+    btnCalcular.addEventListener("click", () => {
 			//console.table(arrayData);
+
+    //validacion campos 
+    validaCampos();
 
 			//obtener seccion de estacion de partida
 			let obtenerSeccionPartida = arrayData.find(
@@ -239,10 +261,7 @@ window.onload = function () {
 		}
 	}
 
-	//funcion validacion campos
-	//TODO: function validaCampos(){}
-
-	//TODO: control de form
+	//formulario
 	formulario.addEventListener("submit", nuevoViaje);
 
 	//agregar nuevo viaje
@@ -250,7 +269,8 @@ window.onload = function () {
 		//parar envio de form
 		e.preventDefault();
 
-		//TODO: agregar validacion campos
+		//validacion campos
+    validaCampos();
 
 		//recuperar info inputs para mostar en historial
 		const pasaje = selectPasaje.options[selectPasaje.selectedIndex].text;
