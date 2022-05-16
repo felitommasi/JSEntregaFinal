@@ -21,13 +21,13 @@ let historialViaje = JSON.parse(sessionStorage.getItem("historial"));
 function mostrarViajes(historialViaje) {
 	if ((historialViaje == null) || (historialViaje == undefined)){
         //crear mensaje de informacion
-        console.log(historialViaje)
-        let mensaje = document.createElement("p");
-        mensaje.innerText = 'No hay viajes registrados';
-        cardViajes.appendChild(mensaje);
+        console.log(historialViaje);
 		console.log("no hay viajes registrados");
 	}
     else if ((historialViaje != null) || (historialViaje != undefined)) {
+        //ocultar imagen y texto
+        document.querySelector("#imagenViajes").style.display = 'none';
+        document.querySelector("#textoImagen").style.display = 'none';
 		//crear card por cada viaje
         console.log(historialViaje)
 		let div = document.createElement("div");
