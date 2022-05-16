@@ -2,13 +2,12 @@
 const saldoActualInput = document.querySelector("#saldoActualInput");
 const nuevoSaldoInput = document.querySelector("#nuevoSaldoInput");
 
+
 //nodos botones
 const btnCarga = document.querySelector("#btnCargar");
 //btn vaciar input carga saldo
 const btnBorrarInputs = document.getElementById("btnBorrarInputs");
 
-//carga saldo
-restarSaldo();
 
 //variables saldo
 let saldoActual = 100;
@@ -99,8 +98,10 @@ btnCarga.addEventListener("click", () => {
 			});
 		},
 	});
-	nuevoSaldoInput.value = "";
-    sessionStorage.setItem("saldo", JSON.stringify(nuevoSaldo));
+    //cambiar valores de los inputs
+    saldoActual = nuevoSaldo;
+    saldoActualInput.value = nuevoSaldo;
+    nuevoSaldoInput.value = "";
 });
 
 

@@ -21,7 +21,7 @@
 	<body>
 		<!--Sidebar-->
 		<div class="d-flex flex-column flex-shrink-0 bg-light sidebar">
-			<ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+			<ul class="nav nav-pills nav-flush flex-column mb-auto text-center" id="sidebar">
 				<li>
 					<a href="#" id="navBtnCompra"
 						><i
@@ -130,7 +130,7 @@
 								id="precioTotalInput"
 								placeholder="$00,00"
 								value="00,00"
-                                disabled="true"
+                                readonly="true"
 							/>
 							<label for="precioTotalInput">Valor total</label>
 						</div>
@@ -168,7 +168,8 @@
 								type="text"
 								class="form-control"
 								id="saldoActualInput"
-								value="$100"
+								value="100"
+                                readonly="true"
 							/>
 							<label for="saldoActualInput">Tu saldo actual es:</label>
 						</div>
@@ -180,34 +181,34 @@
 								class="form-control"
 								id="nuevoSaldoInput"
 								value=""
-                                disabled="true"
+                                readonly="true"
 							/>
 							<label for="nuevoSaldoInput">Tu saldo será:</label>
 						</div>
 					</div>
 				</div>
                 <div class="row mt-4">		
-                    <p class="h4 mt-4 mb-4"><strong>Seleccione el monto a cargar</strong></p>	
+                    <p class="h4 mt-3 mb-4"><strong>Seleccione el monto a cargar</strong></p>	
                 </div>
-                <div class="row mt-2 mb-5 buttonRow">
+                <div class="row mt-2 mb-5 buttonRow g-3">
                     
-                        <button class="btn btn-outline-primary col-md btnCarga" id="btnCarga1">
+                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga1">
                             $10
                         </button>
-                        <button class="btn btn-outline-primary col-md btnCarga" id="btnCarga2">
+                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga2">
                             $20
                         </button>
-                        <button class="btn btn-outline-primary col-md btnCarga" id="btnCarga3">
+                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga3">
                             $50
                         </button>
           
-                        <button class="btn btn-outline-primary col-md btnCarga" id="btnCarga4">
+                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga4">
                             $100
                         </button>
-                        <button class="btn btn-outline-primary col-md btnCarga" id="btnCarga5">
+                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga5">
                             $200
                         </button>
-                        <button class="btn btn-outline-primary col-md btnCarga" id="btnCarga6">
+                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga6">
                             $500
                         </button>
             

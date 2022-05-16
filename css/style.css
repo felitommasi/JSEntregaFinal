@@ -11124,6 +11124,24 @@ textarea.form-control-lg {
   padding: 0;
 }
 
+#cardCarga,
+#cardViajes {
+  display: none;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin: 0 auto;
+}
+.buttonRow .btn {
+  padding: 0.7rem 0;
+  border-radius: 10px;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -11150,22 +11168,35 @@ textarea.form-control-lg {
   display: none;
 }
 
-#cardCarga,
-#cardViajes {
-  display: none;
-}
-
-.buttonRow {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 0.7rem;
-  margin: 0 auto;
-}
-.buttonRow .btn {
-  padding: 0.7rem 0;
-  border-radius: 10px;
+@media (max-width: 992px) {
+  .sidebar {
+    width: 0;
+  }
+  .sidebar .nav {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 70px;
+    justify-content: center;
+    background-color: #f8f9fa;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+  .sidebar .nav ul {
+    margin-top: 2rem;
+  }
+  .sidebar .nav ul li {
+    padding: 1rem 0;
+  }
+  .sidebar .nav ul li i {
+    font-size: 2rem;
+  }
+  .sidebar .nav ul li #iconoCompra, .sidebar .nav ul li #iconoCompraFill,
+.sidebar .nav ul li #iconoCarga, .sidebar .nav ul li #iconoCargaFill,
+.sidebar .nav ul li #iconoViajes, .sidebar .nav ul li #iconoViajesFill {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
