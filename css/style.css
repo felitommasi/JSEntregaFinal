@@ -11122,6 +11122,7 @@ textarea.form-control-lg {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -11151,7 +11152,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 4.5rem;
+  width: 5rem;
   height: 100vh;
 }
 .sidebar ul {
@@ -11177,15 +11178,20 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+  .card {
+    position: relative;
+    z-index: -1;
+  }
+
   .sidebar {
     width: 0;
     height: 0;
   }
-
-  .nav {
-    z-index: 5;
-    position: fixed;
-    bottom: 0;
+  .sidebar ul {
+    position: absolute;
+    margin: 0;
+    z-index: 2;
+    top: 0;
     left: 0;
     width: 100vw;
     height: 80px;
@@ -11193,18 +11199,18 @@ body {
     background-color: #f8f9fa;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
-  .nav li {
+  .sidebar ul li {
     padding: 1rem 0;
   }
-  .nav li i {
+  .sidebar ul li i {
     font-size: 2rem;
   }
-  .nav li #iconoCompra,
-.nav li #iconoCompraFill,
-.nav li #iconoCarga,
-.nav li #iconoCargaFill,
-.nav li #iconoViajes,
-.nav li #iconoViajesFill {
+  .sidebar ul li #iconoCompra,
+.sidebar ul li #iconoCompraFill,
+.sidebar ul li #iconoCarga,
+.sidebar ul li #iconoCargaFill,
+.sidebar ul li #iconoViajes,
+.sidebar ul li #iconoViajesFill {
     display: none;
   }
 }

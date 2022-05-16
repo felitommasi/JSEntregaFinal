@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 4.5rem;
+	width: 5rem;
 	height: 100vh;
 
 	ul {
@@ -36,39 +36,46 @@
 
 //mobile navbar
 @media screen and (max-width: 992px) {
+	.card{
+		position: relative;
+		z-index: -1;
+	}
+
 	.sidebar{
 		width: 0;
 		height: 0;
-	}
-	.nav {
-		//border: 10px solid red;
-		z-index: 5;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100vw;
-		height: 80px;
-		justify-content: center;
-		background-color: #f8f9fa;
-		box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-			rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	
 
-		li {
-			padding: 1rem 0;
-
-			//btns sidebar al entrar por primera vez
-			i {
-				font-size: 2rem;
-			}
-
-			//estilo iconos sidebar
-			#iconoCompra,
-			#iconoCompraFill,
-			#iconoCarga,
-			#iconoCargaFill,
-			#iconoViajes,
-			#iconoViajesFill {
-				display: none;
+		ul {
+			position: absolute;
+			margin: 0;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 80px;
+			justify-content: center;
+			background-color: #f8f9fa;
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+				rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	
+			li {
+				padding: 1rem 0;
+	
+				//btns sidebar al entrar por primera vez
+				i {
+					font-size: 2rem;
+				}
+	
+				//estilo iconos sidebar
+				#iconoCompra,
+				#iconoCompraFill,
+				#iconoCarga,
+				#iconoCargaFill,
+				#iconoViajes,
+				#iconoViajesFill {
+					display: none;
+				}
 			}
 		}
 	}
