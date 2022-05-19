@@ -110,8 +110,8 @@ window.onload = function () {
       if (inputPrecio.value != '$0'){
         //habilitar boton de compra
         btnComprar.disabled = false;
-      }else if (inputPrecio.value == '$0'){
-        inputPrecio.style.border = '2px solid red';
+      }else{
+        console.log('error');
       }
 		});
 
@@ -125,9 +125,9 @@ window.onload = function () {
 	function obtenerValorPasaje() {
 		//validacion para no seleccionar la misma estacion
 		if (((estacionPartida == estacionDestino) && ((selectPartida.value || selectDestino.value) !== 0))) {
-			console.log("seleccione estaciones distintas");
-			inputPrecio.value = `\$${(00, 00)}`;
-			//TODO: agregar sweet alert
+			//console.log("seleccione estaciones distintas");
+			inputPrecio.value = 'Seleccione estaciones distintas';
+      inputPrecio.style.border = '2px solid red';
 		} else if (
 			seccionPartida == 1 &&
 			seccionDestino == 1 &&
@@ -186,9 +186,9 @@ window.onload = function () {
 	function obtenerIdaYVuelta() {
 		//validacion para no seleccionar la misma estacion
 		if (((estacionPartida == estacionDestino) && ((selectPartida.value || selectDestino.value) !== 0))) {
-			console.log("seleccione estaciones distintas");
-			inputPrecio.value = `\$${(00, 00)}`;
-			//TODO: agregar sweet alert
+			//console.log("seleccione estaciones distintas");
+			inputPrecio.value = 'Seleccione estaciones distintas';
+			inputPrecio.style.border = '2px solid red';
 		} else if (
 			seccionPartida == 1 &&
 			seccionDestino == 1 &&
@@ -262,6 +262,9 @@ window.onload = function () {
     const textoError = formControl.querySelector('.text-danger');
     console.log(textoError);
     console.log(formControl);
+
+    //aniimacion
+    select.classList.add('animate__animated', 'animate__headShake');
     
     //mostrar mensaje de error
     textoError.classList.remove('d-none');
@@ -317,10 +320,6 @@ window.onload = function () {
 		//precio pasaje
 		precioPasaje = parseInt(valor);
 
-		//reiniciar valores del formulario
-		formulario.reset();
-		btnComprar.disabled = true;
-
 		//mostrar viajes cuando se agregan
 		mostrarViajes(historialViaje);
 
@@ -330,8 +329,13 @@ window.onload = function () {
 			icon: "success",
 			title: "Listo, ¡buen viaje!",
 			showConfirmButton: false,
-			timer: 2000,
+			timer: 2500,
 		});
+
+    //reiniciar formulario
+    formulario.reset();
+		btnComprar.disabled = true;
+    location.reload()
 	}
 };
 
