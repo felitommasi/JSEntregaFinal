@@ -329,13 +329,16 @@ window.onload = function () {
 			icon: "success",
 			title: "Listo, ¡buen viaje!",
 			showConfirmButton: false,
-			timer: 2500,
+			timer: 2000,
 		});
 
     //reiniciar formulario
-    formulario.reset();
-		btnComprar.disabled = true;
-    location.reload()
+    setTimeout(function (){
+      formulario.reset();
+      btnComprar.disabled = true;
+      location.reload()
+    }, 2000); 
+
 	}
 };
 
