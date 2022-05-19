@@ -46,7 +46,7 @@ function displayCards(display) {
         document.querySelector("#iconoViajes").style.display = "none";
         document.querySelector("#iconoViajesFill").style.display = "block";
 	} else {
-		console.log("errror");
+		console.log('errror');
 	}
 }
 displayCards()

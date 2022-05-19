@@ -1,12 +1,3 @@
-//popper sidebar
-//init popper segun documentacion
-var tooltipTriggerList = [].slice.call(
-	document.querySelectorAll('[data-bs-toggle="tooltip"]')
-);
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-	return new bootstrap.Tooltip(tooltipTriggerEl);
-});
-
 window.onload = function () {
 	//Fetch local
 	const cargarData = async () => {
@@ -32,26 +23,6 @@ window.onload = function () {
 	const btnComprar = document.querySelector("#btnComprar");
 	//deshabilitado hasta obtener valor de pasaje != a 0
 	btnComprar.disabled = true;
-	const btnCancelar = document.querySelector("#btnCancelar");
-
-	//!validacion form
-	//msje por consola en caso de correcto
-	const validOk = () => {
-    //TODO:::::::::::::::::::::::::!!!!!!!!!
-	};
-
-	//msje por pantalla en caso de error
-	const validError = () => {
-		//TODO:::::::::::::::::::::::::!!!!!!!!!
-	};
-
-	function validaCampos() {
-		//validar estacion partida
-		selectPartida.value === undefined ? validError() : validOk();
-
-		//validar estacion destino
-		selectDestino.value === undefined ? validError() : validOk();
-	}
 
 	//pintar data en options
 	const pintarOptions = (arrayData) => {
@@ -81,7 +52,7 @@ window.onload = function () {
 			//traer texto de JSON para completar option's
 			let estacionesDestino = document.createTextNode(
 				`${arrayData[i].estacion}`
-			);
+			); 
 			optionDestino.append(estacionesDestino);
 		}
 	};
@@ -100,38 +71,48 @@ window.onload = function () {
 
 	//obtener secciones de las estaciones
 	const asignarSeccionEstacion = (arrayData) =>
-		
-    btnCalcular.addEventListener("click", () => {
+		btnCalcular.addEventListener("click", () => {
 			//console.table(arrayData);
 
-    //validacion campos 
-    validaCampos();
+			//validacion de campos
+			validaCampos(selectPartida);
+			validaCampos(selectDestino);
 
+			//obtener secciones para valor de pasaje
 			//obtener seccion de estacion de partida
 			let obtenerSeccionPartida = arrayData.find(
 				(e) => e.estacion == estacionPartida
 			);
-			seccionPartida = obtenerSeccionPartida.seccion;
-			console.log(seccionPartida);
+
+			if (obtenerSeccionPartida) {
+				seccionPartida = obtenerSeccionPartida.seccion;
+				console.log(seccionPartida);
+			}
 
 			//obtener seccion de estacion de destino
 			let obtenerSeccionDestino = arrayData.find(
 				(e) => e.estacion == estacionDestino
 			);
-			seccionDestino = obtenerSeccionDestino.seccion;
-			console.log(seccionDestino);
+			if (obtenerSeccionDestino) {
+				seccionDestino = obtenerSeccionDestino.seccion;
+				console.log(seccionDestino);
+			}
 
+      //obtener valor del pasaje solo ida o ida y vuelta
 			if (selectPasaje.value == 1) {
 				obtenerValorPasaje();
-				//habilitar btn de compra
-				btnComprar.disabled = false;
 			} else if (selectPasaje.value == 2) {
 				obtenerIdaYVuelta();
-				//habilitar btn de compra
-				btnComprar.disabled = false;
 			} else {
 				console.log("error");
 			}
+
+      if (inputPrecio.value != '$0'){
+        //habilitar boton de compra
+        btnComprar.disabled = false;
+      }else if (inputPrecio.value == '$0'){
+        inputPrecio.style.border = '2px solid red';
+      }
 		});
 
 	//variables con valores recuperados
@@ -139,12 +120,12 @@ window.onload = function () {
 	let estacionDestino; //nombre de estacion seleccionada
 	let seccionPartida; //seccion de la estacion
 	let seccionDestino; //seccion de la estacion
-
+ 
 	//funcion para calcular el valor del pasaje Solo Ida
 	function obtenerValorPasaje() {
 		//validacion para no seleccionar la misma estacion
-		if (estacionPartida == estacionDestino) {
-			console.log("error, seleccione estaciones distintas");
+		if (((estacionPartida == estacionDestino) && ((selectPartida.value || selectDestino.value) !== 0))) {
+			console.log("seleccione estaciones distintas");
 			inputPrecio.value = `\$${(00, 00)}`;
 			//TODO: agregar sweet alert
 		} else if (
@@ -195,17 +176,17 @@ window.onload = function () {
 			selectPasaje.value == 1
 		) {
 			inputPrecio.value = `${50}`;
-		} else {
+		} /* else {
 			console.log("error");
-		}
+		} */
 	}
 
 	//funcion para calcular el pasaje Ida y Vuelta
 	//(%25 de descuento en el pasaje de vuelta)
 	function obtenerIdaYVuelta() {
 		//validacion para no seleccionar la misma estacion
-		if (estacionPartida == estacionDestino) {
-			console.log("error, seleccione estaciones distintas");
+		if (((estacionPartida == estacionDestino) && ((selectPartida.value || selectDestino.value) !== 0))) {
+			console.log("seleccione estaciones distintas");
 			inputPrecio.value = `\$${(00, 00)}`;
 			//TODO: agregar sweet alert
 		} else if (
@@ -256,10 +237,56 @@ window.onload = function () {
 			selectPasaje.value == 2
 		) {
 			inputPrecio.value = `${50 + 50 * 0.75}`;
-		} else {
+		} /* else {
 			console.log("error");
-		}
+		} */
 	}
+
+  //validacion de campos
+	function validaCampos(select) {
+    console.log(select);
+    const valorSelect = select.value;
+    console.log(valorSelect);
+		valorSelect == 0 ? validError(select) : validOk(select);
+
+    if(validError){
+      select.addEventListener('change', ()=>{
+        validOk(select);
+        });
+    }  
+  }
+
+  //funcion en caso de select invalido
+  function validError(select){
+    const formControl = select.parentElement;
+    const textoError = formControl.querySelector('.text-danger');
+    console.log(textoError);
+    console.log(formControl);
+    
+    //mostrar mensaje de error
+    textoError.classList.remove('d-none');
+
+    //añadir borde de color
+    select.style.border = '2px solid red';
+  }
+
+  //funcion en caso de select valido
+  function validOk(select){
+    const formControl = select.parentElement;
+    const textoError = formControl.querySelector('.text-danger');
+    const textoOk = formControl.querySelector('.text-success');
+
+    //borrar mensaje de error
+    textoError.classList.add('d-none');
+
+    //mostrar mensaje de valido
+    textoOk.classList.remove('d-none');
+    
+    //añadir borde de color
+    select.style.border = '2px solid green';
+  }
+
+
 
 	//formulario
 	formulario.addEventListener("submit", nuevoViaje);
@@ -269,8 +296,8 @@ window.onload = function () {
 		//parar envio de form
 		e.preventDefault();
 
-		//validacion campos
-    validaCampos();
+		//validacion campos: el boton de compra solo se habilita
+    //cuando todos los campos son validos
 
 		//recuperar info inputs para mostar en historial
 		const pasaje = selectPasaje.options[selectPasaje.selectedIndex].text;
