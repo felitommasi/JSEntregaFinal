@@ -23,6 +23,10 @@ window.onload = function () {
 	const btnComprar = document.querySelector("#btnComprar");
 	//deshabilitado hasta obtener valor de pasaje != a 0
 	btnComprar.disabled = true;
+  const btnCancelar = document.querySelector("#btnCancelar").addEventListener('click', () => {
+    formulario.reset();
+    btnComprar.disabled = true;
+  });
 
 	//pintar data en options
 	const pintarOptions = (arrayData) => {
