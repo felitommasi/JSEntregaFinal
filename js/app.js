@@ -107,12 +107,14 @@ window.onload = function () {
 				console.log("error");
 			}
 
-      if ((inputPrecio.value != '$0') && (inputPrecio.value !== 'Seleccione estaciones distintas')){
+      if ((inputPrecio.value != 0 || '$0') && (inputPrecio.value !== 'Seleccione estaciones distintas')){
         //habilitar boton de compra
         btnComprar.disabled = false;
         inputPrecio.style.border = '2px solid green';
       }else if (inputPrecio.value === 'Seleccione estaciones distintas'){
-        inputPrecio.classList.add('animate__animated', 'animate__headShake');
+        btnCalcular.addEventListener('click', () =>{
+          inputPrecio.classList.add('animate__animated', 'animate__headShake');
+        })
       }else{
         console.log("error");
       }
