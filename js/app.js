@@ -297,7 +297,7 @@ window.onload = function () {
 
 
 	//formulario
-	formulario.addEventListener("submit", nuevoViaje);
+	btnComprar.addEventListener("click", nuevoViaje);
 
 	//agregar nuevo viaje
 	function nuevoViaje(e) {
