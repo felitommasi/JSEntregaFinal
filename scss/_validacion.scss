@@ -1,0 +1,13 @@
+.formControlOk {
+	#selectPartida:valid,
+	#selectDestino:valid {
+		border: 2px solid greenyellow;
+	}
+}
+
+.formControlError {
+	#selectPartida:invalid,
+	#selectDestino:invalid {
+		border: 2px solid red;
+	}
+}

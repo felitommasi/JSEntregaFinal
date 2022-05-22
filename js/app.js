@@ -23,9 +23,12 @@ window.onload = function () {
 	const btnComprar = document.querySelector("#btnComprar");
 	//deshabilitado hasta obtener valor de pasaje != a 0
 	btnComprar.disabled = true;
+
+  //boton cancelar vacia todos los campos
   const btnCancelar = document.querySelector("#btnCancelar").addEventListener('click', () => {
     formulario.reset();
     btnComprar.disabled = true;
+    
   });
 
 	//pintar data en options
@@ -185,9 +188,9 @@ window.onload = function () {
 			selectPasaje.value == 1
 		) {
 			inputPrecio.value = `${50}`;
-		} /* else {
+		} else {
 			console.log("error");
-		} */
+		} 
 	}
 
 	//funcion para calcular el pasaje Ida y Vuelta
@@ -227,7 +230,7 @@ window.onload = function () {
 			inputPrecio.value = `${50 + 50 * 0.75}`;
 		} else if (
 			(seccionPartida == 2 && seccionDestino == 3) ||
-			(seccionDestino == 2 && seccionPartida == 3 && selectPasaje.value == 1)
+			(seccionDestino == 2 && seccionPartida == 3 && selectPasaje.value == 2)
 		) {
 			inputPrecio.value = `${70 + 70 * 0.75}`;
 		} else if (
@@ -246,9 +249,9 @@ window.onload = function () {
 			selectPasaje.value == 2
 		) {
 			inputPrecio.value = `${50 + 50 * 0.75}`;
-		} /* else {
+		} else {
 			console.log("error");
-		} */
+		} 
 	}
 
   //validacion de campos
