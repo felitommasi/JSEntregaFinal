@@ -144,7 +144,6 @@ window.onload = function () {
 			estacionPartida == estacionDestino &&
 			(selectPartida.value || selectDestino.value) !== 0
 		) {
-			//console.log("seleccione estaciones distintas");
 			inputPrecio.value = "Seleccione estaciones distintas";
 			inputPrecio.style.border = "2px solid red";
 		} else if (
@@ -208,7 +207,6 @@ window.onload = function () {
 			estacionPartida == estacionDestino &&
 			(selectPartida.value || selectDestino.value) !== 0
 		) {
-			//console.log("seleccione estaciones distintas");
 			inputPrecio.value = "Seleccione estaciones distintas";
 			inputPrecio.style.border = "2px solid red";
 		} else if (
@@ -318,9 +316,6 @@ window.onload = function () {
 	function nuevoViaje(e) {
 		//parar envio de form
 		e.preventDefault();
-
-		//validacion campos: el boton de compra solo se habilita
-		//cuando todos los campos son validos
 
 		//recuperar info inputs para mostar en historial
 		const pasaje = selectPasaje.options[selectPasaje.selectedIndex].text;
