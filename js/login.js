@@ -47,6 +47,6 @@ formLogin.addEventListener('submit', (e) => {
 		}
     });
 
-    window.location.replace("index.html");
+    window.location.replace("main.html");
     return false;
 })
