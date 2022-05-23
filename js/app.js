@@ -24,12 +24,13 @@ window.onload = function () {
 	//deshabilitado hasta obtener valor de pasaje != a 0
 	btnComprar.disabled = true;
 
-  //boton cancelar vacia todos los campos
-  const btnCancelar = document.querySelector("#btnCancelar").addEventListener('click', () => {
-    formulario.reset();
-    btnComprar.disabled = true;
-    
-  });
+	//boton cancelar vacia todos los campos
+	const btnCancelar = document
+		.querySelector("#btnCancelar")
+		.addEventListener("click", () => {
+			formulario.reset();
+			btnComprar.disabled = true;
+		});
 
 	//pintar data en options
 	const pintarOptions = (arrayData) => {
@@ -59,7 +60,7 @@ window.onload = function () {
 			//traer texto de JSON para completar option's
 			let estacionesDestino = document.createTextNode(
 				`${arrayData[i].estacion}`
-			); 
+			);
 			optionDestino.append(estacionesDestino);
 		}
 	};
@@ -105,7 +106,7 @@ window.onload = function () {
 				console.log(seccionDestino);
 			}
 
-      //obtener valor del pasaje solo ida o ida y vuelta
+			//obtener valor del pasaje solo ida o ida y vuelta
 			if (selectPasaje.value == 1) {
 				obtenerValorPasaje();
 			} else if (selectPasaje.value == 2) {
@@ -114,17 +115,20 @@ window.onload = function () {
 				console.log("error");
 			}
 
-      if ((inputPrecio.value != 0 || '$0') && (inputPrecio.value !== 'Seleccione estaciones distintas')){
-        //habilitar boton de compra
-        btnComprar.disabled = false;
-        inputPrecio.style.border = '2px solid green';
-      }else if (inputPrecio.value === 'Seleccione estaciones distintas'){
-        btnCalcular.addEventListener('click', () =>{
-          inputPrecio.classList.add('animate__animated', 'animate__headShake');
-        })
-      }else{
-        console.log("error");
-      }
+			if (
+				(inputPrecio.value != 0 || "$0") &&
+				inputPrecio.value !== "Seleccione estaciones distintas"
+			) {
+				//habilitar boton de compra
+				btnComprar.disabled = false;
+				inputPrecio.style.border = "2px solid green";
+			} else if (inputPrecio.value === "Seleccione estaciones distintas") {
+				btnCalcular.addEventListener("click", () => {
+					inputPrecio.classList.add("animate__animated", "animate__headShake");
+				});
+			} else {
+				console.log("error");
+			}
 		});
 
 	//variables con valores recuperados
@@ -132,14 +136,17 @@ window.onload = function () {
 	let estacionDestino; //nombre de estacion seleccionada
 	let seccionPartida; //seccion de la estacion
 	let seccionDestino; //seccion de la estacion
- 
+
 	//funcion para calcular el valor del pasaje Solo Ida
 	function obtenerValorPasaje() {
 		//validacion para no seleccionar la misma estacion
-		if (((estacionPartida == estacionDestino) && ((selectPartida.value || selectDestino.value) !== 0))) {
+		if (
+			estacionPartida == estacionDestino &&
+			(selectPartida.value || selectDestino.value) !== 0
+		) {
 			//console.log("seleccione estaciones distintas");
-			inputPrecio.value = 'Seleccione estaciones distintas';
-      inputPrecio.style.border = '2px solid red';
+			inputPrecio.value = "Seleccione estaciones distintas";
+			inputPrecio.style.border = "2px solid red";
 		} else if (
 			seccionPartida == 1 &&
 			seccionDestino == 1 &&
@@ -190,17 +197,20 @@ window.onload = function () {
 			inputPrecio.value = `${50}`;
 		} else {
 			console.log("error");
-		} 
+		}
 	}
 
 	//funcion para calcular el pasaje Ida y Vuelta
 	//(%25 de descuento en el pasaje de vuelta)
 	function obtenerIdaYVuelta() {
 		//validacion para no seleccionar la misma estacion
-		if (((estacionPartida == estacionDestino) && ((selectPartida.value || selectDestino.value) !== 0))) {
+		if (
+			estacionPartida == estacionDestino &&
+			(selectPartida.value || selectDestino.value) !== 0
+		) {
 			//console.log("seleccione estaciones distintas");
-			inputPrecio.value = 'Seleccione estaciones distintas';
-			inputPrecio.style.border = '2px solid red';
+			inputPrecio.value = "Seleccione estaciones distintas";
+			inputPrecio.style.border = "2px solid red";
 		} else if (
 			seccionPartida == 1 &&
 			seccionDestino == 1 &&
@@ -251,57 +261,55 @@ window.onload = function () {
 			inputPrecio.value = `${50 + 50 * 0.75}`;
 		} else {
 			console.log("error");
-		} 
+		}
 	}
 
-  //validacion de campos
+	//validacion de campos
 	function validaCampos(select) {
-    console.log(select);
-    const valorSelect = select.value;
-    console.log(valorSelect);
+		console.log(select);
+		const valorSelect = select.value;
+		console.log(valorSelect);
 		valorSelect == 0 ? validError(select) : validOk(select);
 
-    if(validError){
-      select.addEventListener('change', ()=>{
-        validOk(select);
-        });
-    }  
-  }
+		if (validError) {
+			select.addEventListener("change", () => {
+				validOk(select);
+			});
+		}
+	}
 
-  //funcion en caso de select invalido
-  function validError(select){
-    const formControl = select.parentElement;
-    const textoError = formControl.querySelector('.text-danger');
-    console.log(textoError);
-    console.log(formControl);
+	//funcion en caso de select invalido
+	function validError(select) {
+		const formControl = select.parentElement;
+		const textoError = formControl.querySelector(".text-danger");
+		console.log(textoError);
+		console.log(formControl);
 
-    //aniimacion
-    select.classList.add('animate__animated', 'animate__headShake');
-    
-    //mostrar mensaje de error
-    textoError.classList.remove('d-none');
+		//aniimacion
+		select.classList.add("animate__animated", "animate__headShake");
 
-    //añadir borde de color
-    select.style.border = '2px solid red';
-  }
+		//mostrar mensaje de error
+		textoError.classList.remove("d-none");
 
-  //funcion en caso de select valido
-  function validOk(select){
-    const formControl = select.parentElement;
-    const textoError = formControl.querySelector('.text-danger');
-    const textoOk = formControl.querySelector('.text-success');
+		//añadir borde de color
+		select.style.border = "2px solid red";
+	}
 
-    //borrar mensaje de error
-    textoError.classList.add('d-none');
+	//funcion en caso de select valido
+	function validOk(select) {
+		const formControl = select.parentElement;
+		const textoError = formControl.querySelector(".text-danger");
+		const textoOk = formControl.querySelector(".text-success");
 
-    //mostrar mensaje de valido
-    textoOk.classList.remove('d-none');
-    
-    //añadir borde de color
-    select.style.border = '2px solid green';
-  }
+		//borrar mensaje de error
+		textoError.classList.add("d-none");
 
+		//mostrar mensaje de valido
+		textoOk.classList.remove("d-none");
 
+		//añadir borde de color
+		select.style.border = "2px solid green";
+	}
 
 	//ejecutar funcion nuevo viaje con submit
 	formulario.addEventListener("submit", nuevoViaje);
@@ -312,7 +320,7 @@ window.onload = function () {
 		e.preventDefault();
 
 		//validacion campos: el boton de compra solo se habilita
-    //cuando todos los campos son validos
+		//cuando todos los campos son validos
 
 		//recuperar info inputs para mostar en historial
 		const pasaje = selectPasaje.options[selectPasaje.selectedIndex].text;
@@ -344,15 +352,12 @@ window.onload = function () {
 			timer: 2000,
 		});
 
-    //reiniciar formulario
-    setTimeout(function (){
-      formulario.reset();
-      btnComprar.disabled = true;
-      location.reload()
-    }, 2000); 
-
+		//reiniciar formulario
+		setTimeout(function () {
+			formulario.reset();
+			btnComprar.disabled = true;
+			location.reload();
+		}, 2000);
 	}
 };
 
-//TODO: agregar inicio de sesion con animacion tarjeta
-//console.log(parseInt(precioTotalInput.value))

@@ -1,0 +1,44 @@
+#contenedorTarjeta{
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+    min-width: 300px;
+    position: relative;
+    z-index: 3;
+
+    #frenteTarjeta{
+        border-radius: 23px;
+    }
+
+    #numerosTarjeta{
+        font-size: 1.5rem;
+        position: absolute;
+        top: 75%;
+        left: 6%;
+    }
+}
+
+#cardLogin{
+    padding: 8rem 4rem 2rem 4rem;
+    position: relative;
+    top: -160px;
+    z-index: 0;
+}
+
+
+//mobile 
+@media screen and (max-width: 780px) {
+    #contenedorTarjeta{
+        padding: 6rem;
+
+        #numerosTarjeta{
+            display: none;
+        }
+    }
+
+
+    #cardLogin{
+        top: -350px;
+    }
+}
+
