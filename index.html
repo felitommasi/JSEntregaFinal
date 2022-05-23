@@ -14,250 +14,72 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
 		/>
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-      />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		/>
 		<link rel="stylesheet" href="./css/style.css" />
-		<title>SUBE - Proyecto Coderhouse</title>
+		<title>SUBE - Login</title>
 	</head>
-
 	<body>
-		<!--Sidebar-->
-		<div class="d-flex flex-column flex-shrink-0 bg-light sidebar">
-			<ul class="nav nav-pills nav-flush flex-column mb-auto text-center" id="sidebar">
-				<li>
-					<a href="#" id="navBtnCompra"
-						><i
-							class="bi bi-ticket-perforated text-primary"
-							data-bs-toggle="tooltip"
-							data-bs-placement="right"
-							title="Comprar pasaje"
-							id="iconoCompra"
-						></i
-						><i
-							class="bi bi-ticket-perforated-fill text-primary"
-							data-bs-toggle="tooltip"
-							data-bs-placement="right"
-							title="Comprar pasaje"
-							id="iconoCompraFill"
-						></i
-					></a>
-                    <span class="textoIcono text-primary">Compra</span>
-				</li>
-				<li>
-					<a href="#" id="navBtnCarga"
-						><i
-							class="bi bi-piggy-bank"
-							data-bs-toggle="tooltip"
-							data-bs-placement="right"
-							title="Cargar saldo"
-							id="iconoCarga"
-						></i
-						><i
-							class="bi bi-piggy-bank-fill"
-							data-bs-toggle="tooltip"
-							data-bs-placement="right"
-							title="Cargar saldo"
-							id="iconoCargaFill"
-						></i
-					></a>
-                    <span class="textoIcono text-primary">Saldo</span>
-				</li>
-				<li>
-					<a href="#" id="navBtnViajes"
-						><i
-							class="bi bi-clock text-primary"
-							data-bs-toggle="tooltip"
-							data-bs-placement="right"
-							title="Ver historial"
-							id="iconoViajes"
-						></i
-						><i
-							class="bi bi-clock-fill text-primary"
-							data-bs-toggle="tooltip"
-							data-bs-placement="right"
-							title="Ver historial"
-							id="iconoViajesFill"
-						></i
-					></a>
-                    <span class="textoIcono text-primary">Historial</span>
-				</li>
-			</ul>
+		<!--tarjeta-->
+		<div id="contenedorTarjeta" class="container d-flex mt-5">
+			<img
+				src="./img/SUBE_frente.svg"
+				alt="frente de la tarjeta"
+				class="img-fluid shadow"
+				id="frenteTarjeta"
+			/>
+			<p id="numerosTarjeta">1234 5678 9101 1234 3214</p>
 		</div>
-		<!--Fin Sidebar-->
 
-		<!--Compra-->
-
-		<div class="container card shadow col-10 mt-2 p-5 mt-5 mb-5" id="cardCompra">
-			<form id="formCompra">
+		<!--card-->
+		<div class="container card shadow col-9 mt-5 mb-5" id="cardLogin">
+			<!--form-->
+			<form id="loginForm">
 				<div class="row mt-5">
-					<h3>Comprar pasaje</h3>
-					<p class="text-muted">
-						Comprando ida y vuelta, obtenés 25% de descuento en el pasaje de
-						vuelta.
-					</p>
-				</div>
-				<div class="row g-3 mb-4">
-							<div class="col-md-6">
-								<div class="form-floating">
-									<select class="form-select" id="selectPartida" required>
-										<option selected value="0">Selecciona una estación</option>
-                                        <!--Agregar options con JS-->
-									</select>
-									<label for="selectPartida">Estacion de Partida</label>
-                                    <small class="text-success d-none">Estación seleccionada correctamente</small>
-                                    <small class="text-danger d-none">Por favor seleccione una estación</small>
-                                  <!--   <small class="text-danger">Por favor seleccione estaciones distintas</small> -->
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-floating">
-									<select class="form-select" id="selectDestino" required>
-										<option selected value="0">Selecciona una estación</option>
-                                        <!--Agregar options con JS-->
-									</select>
-									<label for="selectDestino">Estacion de Destino</label>
-                                    <small class="text-success d-none">Estación seleccionada correctamente</small>
-                                    <small class="text-danger d-none">Por favor seleccione una estación</small>
-                                   <!--  <small class="text-danger">Por favor seleccione estaciones distintas</small> -->
-								</div>
-							</div>
-				</div>
-				<div class="row g-3 mb-4">
-					<div class="col-md-6">
-						<div class="form-floating">
-							<select class="form-select" id="tipoPasaje">
-								<option value="1">Sólo ida</option>
-								<option value="2">Ida y vuelta</option>
-							</select>
-							<label for="tipoPasaje">Tipo de pasaje</label>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="form-floating">
-							<input
-								type="text"
-								class="form-control"
-								id="precioTotalInput"
-								placeholder="$00,00"
-								value="0"
-                                readonly="true"
-							/>
-							<label for="precioTotalInput">Valor total</label>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-5 mb-5 buttonRow">
-						<button type="button" class="btn btn-primary col-md" id="btnCalcular">
-							Calcular precio
-						</button>
-						<button type="submit" class="btn btn-success col-md" id="btnComprar">
-							Comprar pasaje
-						</button>
-						<button type="reset" class="btn btn-danger col-md" id="btnCancelar">
-							Cancelar
-						</button>
-				</div>
-			</form>
-		</div>
-		<!--Fin compra-->
-
-		<!--Carga-->
-		<div class="container card shadow col-10 mt-2 p-5 mt-5" id="cardCarga">
-			<form id="formCarga">
-				<div class="row mt-5">
-					<h3>Cargar saldo</h3>
-					<p class="text-muted">
-						¡Cargá el saldo de tu tarjeta SUBE y seguí viajando!
+					<h3 class="text-center">
+						Ingresá el numero de tu tarjeta <strong>SUBE</strong> para comenzar
+					</h3>
+					<p class="text-muted text-center">
+						Cargá saldo, compra pasajes y mirá tu historial de viajes
 					</p>
 				</div>
 
-				<div class="row g-2">
+				<div class="row g-2 mt-5">
 					<div class="col-md">
 						<div class="form-floating">
 							<input
 								type="text"
 								class="form-control"
-								id="saldoActualInput"
-								value="100"
-                                readonly="true"
-							/>
-							<label for="saldoActualInput">Tu saldo actual es:</label>
-						</div>
-					</div>
-					<div class="col-md">
-						<div class="form-floating">
-							<input
-								type="text"
-								class="form-control"
-								id="nuevoSaldoInput"
+								id="numeroTarjeta"
 								value=""
-                                readonly="true"
+                                maxlength="19"
 							/>
-							<label for="nuevoSaldoInput">Tu saldo será:</label>
+							<label for="numeroTarjeta"
+								>Ingresá los 16 dígitos:</label
+							>
 						</div>
 					</div>
 				</div>
-                <div class="row mt-4">		
-                    <p class="h4 mt-3 mb-4"><strong>Seleccione el monto a cargar</strong></p>	
-                </div>
-                <div class="row mt-2 mb-5 buttonRow g-3">
-                    
-                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga1">
-                            $10
-                        </button>
-                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga2">
-                            $20
-                        </button>
-                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga3">
-                            $50
-                        </button>
-          
-                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga4">
-                            $100
-                        </button>
-                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga5">
-                            $200
-                        </button>
-                        <button class="btn btn-outline-primary col-sm-3 col-md btnCarga" id="btnCarga6">
-                            $500
-                        </button>
-            
-                </div>
+				<!--botones-->
 				<div class="row mt-5 mb-5 buttonRow">
-						<button type="submit" class="btn btn-success col-md" id="btnCargar">Cargar</button>
-						<button type="reset" class="btn btn-danger col-md" id="btnBorrarInputs">Cancelar</button>
+					<button type="submit" class="btn btn-primary col-md" id="btnIngresar">
+						Ingresar
+					</button>
+					<button type="reset" class="btn btn-danger col-md" id="btnCancelar">
+						Cancelar
+					</button>
 				</div>
 			</form>
 		</div>
-		<!--Fin Carga-->
 
-		<!--Historial-->
-		<div class="container card shadow col-10 mt-2 p-5 mt-5 mb-5" id="cardViajes">
-			<div class="row mt-2">
-				<h3>Tu historial de viajes</h3>
-				<p class="text-muted mb-4">Estos son los viajes que realizaste:</p>
-			</div>
-			<div id="viajesRealizados">
-                <img src="./img/imagenTren-01.svg" alt="dibujo de una persona esperando el tren con el movil en la mano" class="img-fluid" id="imagenViajes">
-				<p class="h3 text-center text-primary mb-5" id="textoImagen">Parece que aún no tenés viajes realizados</p>
-                <!--Agregar con local storage-->
-			</div>
-		</div>
-		<!--Fin Historial-->
-
-		<!-- Scripts -->      
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"
-        ></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-		<script src="./js/display.js"></script>
-        <script src="./js/historial.js"></script>
-        <script src="./js/carga.js"></script>
-		<script src="./js/app.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="./js/login.js"></script>
 	</body>
 </html>
